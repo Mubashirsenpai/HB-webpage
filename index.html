@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM Hostels Booking Hub</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ================= HEADER UPDATE ================= -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1><i class="fas fa-home"></i> BM Hostels</h1>
+                <p class="first-paragraph">Find your perfect student accommodation with just a single click...</p>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn outline"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button id="signupBtn" class="btn primary"><i class="fas fa-user-plus"></i> Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container">
+         <!-- ================= HERO CONTENT ================= -->
+         <section class="hero">
+            <!-- Background Slideshow -->
+            <div class="hero-bg-container">
+                <div class="hero-bg-scroller">
+                    <img src="Himages/gmsaramada.jpg" alt="Hostel">
+                    <img src="Himages/R3.jpg" alt="Hostel">
+                    <img src="Himages/gmsaramada.jpg" alt="Hostel">
+                    <!-- Duplicate first image for seamless loop -->
+                    <img src="Himages/R3.jpg" alt="Hostel"> 
+                </div>
+                <div class="hero-bg-overlay"></div>
+            </div>
+            
+            <!-- Content Container -->
+            <div class="hero-content">
+                <h2>Welcome to BM Hostels Hub</h2>
+                <div class="scrolling-text-container">
+                    <p class="scrolling-text">Browse through verified and comfortable hostels with transparent pricing</p>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search by location or hostel name...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FILTERS UPDATE ================= -->
+        <section class="filters">
+            <h2>Find Your Perfect Hostel</h2>
+            
+            <!-- Price Range Filter -->
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                    <input type="range" id="priceRange" min="1300" max="8000" step="200" value="1500">
+                    <span id="priceValue">GHS 800</span>
+                </div>
+            </div>
+            
+            <!-- Campus Filter -->
+            <div class="filter-group">
+                <h3>Campus Location</h3>
+                <div class="campus-options">
+                    <label><input type="radio" name="campus" value="all" checked> All Campuses</label>
+                    <label><input type="radio" name="campus" value="tamale"> Tamale Campus</label>
+                    <label><input type="radio" name="campus" value="nyankpala"> Nyankpala Campus</label>
+                    <label><input type="radio" name="campus" value="city"> City Campus</label>
+                </div>
+            </div>
+            
+            <!-- Amenities Filter -->
+            <div class="filter-group">
+                <h3>Amenities</h3>
+                <div class="amenities-grid">
+                    <label><input type="checkbox" name="wifi"> <i class="fas fa-wifi"></i> WiFi</label>
+                    <label><input type="checkbox" name="laundry"> <i class="fas fa-tshirt"></i> Laundry</label>
+                    <label><input type="checkbox" class="amenity" value="toilet"> <i class="fas fa-toilet"></i> Toilet</label>
+                    <label><input type="checkbox" class="amenity" value="bathroom"> <i class="fas fa-bath"></i> Bathroom</label>
+                    <label><input type="checkbox" class="amenity" value="kitchen"> <i class="fas fa-utensils"></i> Kitchen</label>
+                    <label><input type="checkbox" class="amenity" value="own meter"> <i class="fas fa-bolt"></i> Own Meter</label>
+                    <label><input type="checkbox" class="amenity" value="wardrobe"> <i class="fas fa-boxes"></i> Wardrobe</label>
+                    <label><input type="checkbox" class="amenity" value="bed"> <i class="fas fa-bed"></i> Bed</label>
+                </div>
+            </div>
+            
+            <div class="filter-buttons">
+                <button id="applyFilters" class="btn primary">Apply Filters</button>
+                <button id="resetFilters" class="btn outline">Reset All</button>
+            </div>
+        </section>
+
+        <!-- ================= HOSTEL LISTINGS UPDATE ================= -->
+        <section class="hostel-grid">
+            <div class="sort-options">
+                <span>Sort by:</span>
+                <select>
+                    <option>Recommended</option>
+                    <option>Price (Low)</option>
+                    <option>Price (Average)</option>
+                    <option>Price (High)</option>
+                    <option>Distance to Campus</option>
+                </select>
+            </div>
+            
+            <div class="hostel-cards">
+                <!-- Hostel Card 1 -->
+                <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Hostel Card 2 -->
+                <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Hostel Card 3 -->
+                <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Hostel Card 4 -->
+                <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+
+                 <!-- Hostel Card 4 -->
+                 <div class="hostel-card">
+                    <div class="hostel-images">
+                        <img src="Himages/gmsaramada.jpg" alt="Leemont Hostel">
+                    </div>
+                    <div class="hostel-details">
+                        <h3>Leemont Hostel</h3>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> Nyankpala Campus (0.5km)
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(24 reviews)</span>
+                        </div>
+                        <div class="amenities">
+                            <span><i class="fas fa-toilet"></i> Private toilet</span>
+                            <span><i class="fas fa-bed"></i> Single bed</span>
+                            <span><i class="fas fa-wifi"></i> WiFi</span>
+                            <span><i class="fas fa-chair"></i> Table and Chair</span>
+                            <span><i class="fas fa-bolt"></i> Own Meter</span>
+                            <span><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span><i class="fas fa-bath"></i> Bathroom</span>
+                            <span><i class="fas fa-water"></i> Water Reservior</span>
+                        </div>
+                        <div class="price">GHS 5000/Academic year<br>(one in a room)</div>
+                        <div class="price">GHS 6000/Academic year<br>(two in a room)</div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span>...</span>
+                <button class="page-btn">10</button>
+                <button class="next-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER UPDATE ================= -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-home"></i> BM Hostels</h3>
+                <p>Making student accommodation search easy and reliable since 2023.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">List Your Hostel</a></li>
+                    <li><a href="#">Safety Guidelines</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> bawamubashir1974@gmail.com</p>
+                <p><i class="fas fa-phone"></i> (+233) 20 597 5367</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nyankpala Campus</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 BM Hostels Booking Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL UPDATES ================= -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="social-login">
+                    <button type="button" class="google-btn">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                </div>
+                <div class="divider">or</div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <div class="switch-form">
+                    Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create New Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Create Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a></label>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+                <div class="switch-form">
+                    Already have an account? <a href="#" id="showLogin">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="javascript.js" defer></script>
+    <script src="hbscript.js" defer></script>
+</body>
+</html>
